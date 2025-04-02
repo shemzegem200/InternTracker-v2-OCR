@@ -1,0 +1,66 @@
+
+nav{
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 55px;
+    background-color: #1f2029;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    color: #f5f5f5;
+    font-family: Inter,ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.logo span{
+    color: #ffeba7;
+}
+nav div{
+    display: flex;
+    gap: 10px;
+    color: #ffeba7;
+    font-family: Inter,ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
+}
+nav div a{
+    all: unset;
+    transition: all 0.3s ease;
+    height: 100%;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 20px 0px;
+    margin: 0px 10px;
+    display: inline-block;
+    position: relative;
+    opacity: 0.75;
+}
+nav div a:hover{
+    color: #f8f8f8;
+    cursor: pointer;
+    text-shadow:1px 1px 5px #f8f8f8;
+}
+.nav-link::before {
+    transition: 400ms;
+    opacity: 75%;
+    height: 3px;
+    content: "";
+    position: absolute;
+    background-color: #fdf9eb;
+  }
+  
+  .nav-link-ltr::before {
+    width: 0%;
+    bottom: 10px;
+  }
+  
+  .nav-link-ltr:hover::before {
+    width: 100%;
+  }
+

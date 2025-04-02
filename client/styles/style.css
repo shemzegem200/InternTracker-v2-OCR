@@ -1,0 +1,348 @@
+@import url("./login.css");
+@import url("./navbar.css");
+@import url("./internship.css");
+@import url("./profile.css");
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Inter,ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
+}
+
+body{
+    background-color: #2a2b38;
+}
+
+
+.teacher-table-container {
+    margin-top: 15px;
+    width: 80vw;
+    margin-left: 10vw;
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden;
+    max-height: 400px; /* Adjust height as needed */
+    border-radius: 1.5rem;
+}
+.teacher-table{
+    /* width: 80vw; */
+    /* margin-left: 10vw; */
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    table-layout: fixed;
+}
+.teacher-table thead {
+    position: sticky;
+    top: 0;
+    background-color: #424356b7; /* Keep same as header color */
+    z-index: 10; /* Ensure it stays above tbody */
+}
+.teacher-table-container{
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+}
+
+.teacher-table-container ::-webkit-scrollbar {
+    display: none; /* Hides scrollbar in Chrome, Safari */
+}
+
+
+
+
+.teacher-table th{
+    background-color: #6a6c8992;
+    padding: 12px;
+    font-size: 0.6rem;
+    font-weight: bold;
+    color: bisque;
+    text-transform: uppercase;
+    text-align: center;
+}
+.teacher-table th, .teacher-table td {
+    text-overflow: ellipsis;
+}
+.teacher-table td:hover {
+    overflow: visible; /* Show full content on hover */
+    white-space: normal;
+    word-wrap: break-word;
+}
+.teacher-table td::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.teacher-table thead tr th:first-child {
+    border-top-left-radius: 1.5rem;
+}
+
+.teacher-table thead tr th:last-child {
+    border-top-right-radius: 1.5rem;
+}
+
+.teacher-table tbody tr {
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    background-color: rgb(215, 212, 238);
+    transition: background 0.3s ease-in-out;
+}
+
+.teacher-table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 1.5rem;
+}
+
+.teacher-table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 1.5rem;
+}
+
+.teacher-table th, .teacher-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    font-size: 0.6rem;
+    overflow: hidden;
+    max-width: 100px;
+}
+
+.teacher-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.teacher-table tbody tr:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+
+.intern-table-1-controls{
+    margin-top: calc(20px + 55px);
+    width: 80%;
+    height: 55px;
+    margin-left: 10%;
+    background-color: rgb(215, 212, 238);
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: #292b3a;
+    justify-content: space-between;
+}
+
+.inner-controls{ 
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    height: 60px;
+}
+
+
+
+
+/* teacher intern filter option styles */
+.search-btn{
+    /* all: unset; */
+    cursor: pointer;
+    /* background-color: #292b3a; */
+    background-color: #2a2b38;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px;
+}
+
+
+
+
+/* india/abroad select */ 
+.select-label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #fff; /* Adjust color if necessary */
+}
+.custom-select {
+    background-color: #4CAF50;
+    color: #212121;
+    padding: 5px 15px;
+    font-size: 15px;
+    font-weight: bold;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    cursor: pointer;
+    appearance: none; /* Removes default dropdown arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.custom-select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%23212121'%3E%3Cpath d='M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
+    padding-right: 30px; /* Space for the arrow */
+    transition: all 0.2s;
+}
+.custom-select:hover {
+    border: 2px solid #aae8ac;
+    background-color: #64ca67;
+}
+.custom-select:focus {
+    outline: none;
+    border-color: #fff;
+}
+
+
+.year-input-select {
+    width: 120px;
+    background-color: #1f2029;
+    border-radius: 13px;
+    padding: .65em 1em;
+    color: bisque;
+}
+
+.tooltip {
+    position: relative;
+    cursor: pointer;
+}
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    bottom: 150%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out;
+}
+.tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.grey{
+    background-color: #848484;
+    border: none;
+}
+.grey:hover{
+    background-color: #c9c9c9;
+    border: none;
+}
+
+
+
+/* close button for the form */
+.close-x{
+    position: relative;
+	width: 23px;
+	height: 23px;
+	border: 2px solid #eef5df;
+	background-color: #ff5248;
+	border-radius: 50%;
+}
+.close-x::before, .close-x::after {
+	position: absolute;
+	top: 8.5px;
+	left: 3px;
+	width: 13px;
+	height: 3px;
+	content: "";
+	background-color: #eef5df;
+	display: none;
+	}
+.close-x::before {
+	-ms-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	}
+.close-x::after {
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	}
+.close-x:hover { cursor: pointer; }
+.close-x:hover::before, .close-x:hover::after { display: block; }
+
+
+/* for file input from uiverse */
+.file-upload-container {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 30px rgba(0, 0, 0, .2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 5px;
+    /* background-color: rgba(0, 110, 255, 0.041); */
+    background-color:rgba(255, 255, 255, 0.774);
+  }
+  
+  .file-upload-header {
+    flex: 1;
+    width: 100%;
+    border: 2px dashed royalblue;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .file-upload-header svg {
+    height: 100px;
+  }
+  
+  .file-upload-header p {
+    text-align: center;
+    color: black;
+  }
+  
+  .file-upload-footer {
+    background-color: rgba(0, 110, 255, 0.075);
+    width: 100%;
+    height: 40px;
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: black;
+    border: none;
+  }
+  
+  .file-upload-footer svg {
+    height: 130%;
+    fill: royalblue;
+    background-color: rgba(70, 66, 66, 0.103);
+    border-radius: 50%;
+    padding: 2px;
+    cursor: pointer;
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.205);
+  }
+  
+  .file-upload-footer p {
+    flex: 1;
+    text-align: center;
+  }
+  
+  #file-upload-input {
+    display: none;
+  }
+  #file-name{
+    margin-top: -3px;
+    align-items: center;
+  }

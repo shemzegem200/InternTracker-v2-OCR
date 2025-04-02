@@ -1,0 +1,109 @@
+
+/* From Uiverse.io by alexruix */ 
+.card_1 {
+    width: 190px;
+    padding: 1.9rem 1.2rem;
+    text-align: center;
+    background: #2a2b38;
+   }
+   
+   /*Inputs*/
+   .field_1 {
+    flex: 1;
+    margin-top: .9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+    background-color: #1f2029;
+    border-radius: 13px;
+    padding: .8em 1em;
+   }
+   
+   .input-icon_1 {
+    height: 1.2em;
+    width: 1.2em;
+    fill: #ffeba7;
+   }
+   
+   .input-field_1 {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #d3d3d3;
+    font-size: 1rem;
+   }
+   
+   /*Text*/
+   .title_1 {
+    margin-bottom: 1.5rem;
+    font-size: 2.5em;
+    font-weight: 500;
+    color: #f5f5f5;
+    /* color: #ffeba7; */
+    font-family: Inter,ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
+   }
+   
+   /*Buttons*/
+   .btn_1 {
+    margin: 1.3rem;
+    border: none;
+    border-radius: 11px;
+    font-weight: bold;
+    font-size: .8em;
+    text-transform: uppercase;
+    padding: 0.8em 1.2em;
+    background-color: #ffeba7;
+    color: #5e6681;
+    box-shadow: 0 8px 24px 0 rgb(255 235 167 / 20%);
+    transition: all .3s ease-in-out;
+   }
+   
+   .btn-link_1 {
+    color: #f5f5f5;
+    display: block;
+    font-size: .75em;
+    transition: color .3s ease-out;
+    text-decoration: none;
+    margin-bottom: 0.3rem;
+    transition: all 0.3s ease;
+    font-family: Inter,ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji";
+   }
+   
+   /*Hover & focus*/
+   .field_1 input_1:focus::placeholder {
+    opacity: 0;
+    transition: opacity .3s;
+   }
+   
+   .btn_1:hover {
+    background-color: #5e6681;
+    color: #ffeba7;
+    box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
+    cursor: pointer;
+   }
+   
+   .btn-link_1:hover {
+    color: #ffeba7;
+   }
+   
+
+   #login{
+    text-align: center;
+    height: 300px;
+    width: 400px;
+    margin: auto;
+    margin-top: 16vh;
+}
+
+.field_2{
+    margin-top: 15px;
+    color: #f5f5f5;
+}
+.field_2 input{
+    accent-color: #ffeba7;
+}
+.field_2 input:checked + label{
+    color:#ffeba7;
+}

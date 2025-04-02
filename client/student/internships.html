@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InternTracker</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="../scripts/student_internships.js" defer></script>
+</head>
+<body>
+    <nav>
+        <span class="logo">Intern<span>Tracker</span></span>
+        <div>
+            <!-- <a class="nav-link nav-link-ltr" href="./studenthome.html">Home</a> -->
+            <a class="nav-link nav-link-ltr" href="./internships.html">Internships</a>
+            <a class="nav-link nav-link-ltr" href="./profile.html">Profile</a>
+            <a class="nav-link nav-link-ltr" onclick="logout()">Logout</a>
+        </div>
+    </nav>
+    
+
+    <div class="intern-table-controls">
+        <h4>My Internships</h4>
+        <button class="btn_1" onclick="openModal()">Add New Internship</button>
+    </div>
+
+    <div class="teacher-table-container">
+        <table class="teacher-table">
+            <thead>
+                <tr><th>S no.</th><th>Company</th><th>Type</th><th>Role</th><th>Period</th><th>Start Date</th><th>End Date</th><th>Stipend</th></tr>
+            </thead>
+            <tbody id="intern-table-body">
+                <!-- <tr><td>1</td><td>Neur XR Studios</td><td>SDE</td><td>10/6/24</td><td>8/7/24</td><td>...</td></tr>
+                <tr><td>1</td><td>Neur XR Studios</td><td>SWE</td><td>10/6/24</td><td>8/7/24</td><td>...</td></tr>
+                <tr><td>1</td><td>Neur XR Studios</td><td>SWE</td><td>10/6/24</td><td>8/7/24</td><td>...</td></tr> -->
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <div class="dim-bg">
+        <div class="model-container">
+            <form id="stud-intern-form" onsubmit="closeModal()" autocomplete="off">
+                <div style="display: flex; justify-content:space-between;"><h4>Internship Details</h4><span class="close-x" onclick="hideModal()"></span></div>
+                
+                <label for="company-name-input">Company Name</label>
+                <input required type="text" placeholder="Company Name" id="company-name-input" autocomplete="off">
+            
+                <label for="period">Period (in months)</label>
+                <input required type="number" name="period" placeholder="Number of months" min="1" value="1" id="period-input" autocomplete="off">
+                
+                <label for="title-input">Role</label>
+                <input required type="text" placeholder="Eg. Data Analytics, SDE, etc" id="title-input" autocomplete="off">
+                
+                <label for="start-date">Start Date</label>
+                <input required type="date" name='start-date' placeholder="Start Date" id="start-date-input" autocomplete="off">
+            
+                <label for="end-date">End Date</label>
+                <input required type="date" name="end-date" placeholder="End Date" id="end-date-input" autocomplete="off">
+            
+                <label for="source">Placement Source</label>
+                <select required name="source" id="source-input">
+                    <option value="Through College CDC" default>Through College CDC</option>
+                    <option value="Private Contacts">Private Contacts</option>
+                    <option value="Online Application (Ex. LinkedIn)">Online Application (Ex. LinkedIn)</option>
+                </select>
+            
+                <label for="type-input">Type</label>
+                <select required name="source" id="type-input">
+                    <option selected disabled value="">Research/Industry</option>
+                    <option>Research</option>
+                    <option>Industry</option>
+                </select>
+            
+                <label for="location-input">Location</label>
+                <select required name="location-input" id="location-input">
+                    <option selected disabled value="">Abroad/India</option>
+                    <option>Abroad</option>
+                    <option>India</option>
+                </select>
+                <br>
+
+
+                <div class="file-upload-container"> 
+                    <div class="file-upload-header" id="file-upload-text"> 
+                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 10V9C7 6.23858 9.23858 4 12 4C14.7614 4 17 6.23858 17 9V10C19.2091 10 21 11.7909 21 14C21 15.4806 20.1956 16.8084 19 17.5M7 10C4.79086 10 3 11.7909 3 14C3 15.4806 3.8044 16.8084 5 17.5M7 10C7.43285 10 7.84965 10.0688 8.24006 10.1959M12 12V21M12 12L15 15M12 12L9 15" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg> 
+                      <p>Browse File to upload!</p>
+                    </div> 
+                    <label for="file-upload-input" class="file-upload-footer"> 
+                      <svg fill="#000000" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.331 6H8.5v20h15V14.154h-8.169z"></path>
+                        <path d="M18.153 6h-.009v5.342H23.5v-.002z"></path>
+                      </svg> 
+                      <p id="file-name">No file selected</p> 
+                      <svg id="remove-file" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="removeFile(event)">
+                        <path d="M5.16565 10.1534C5.07629 8.99181 5.99473 8 7.15975 8H16.8402C18.0053 8 18.9237 8.9918 18.8344 10.1534L18.142 19.1534C18.0619 20.1954 17.193 21 16.1479 21H7.85206C6.80699 21 5.93811 20.1954 5.85795 19.1534L5.16565 10.1534Z" stroke="#000000" stroke-width="2"></path> 
+                        <path d="M19.5 5H4.5" stroke="#000000" stroke-width="2" stroke-linecap="round"></path> 
+                        <path d="M10 3C10 2.44772 10.4477 2 11 2H13C13.5523 2 14 2.44772 14 3V5H10V3Z" stroke="#000000" stroke-width="2"></path> 
+                      </svg>
+                    </label> 
+                    <input required id="file-upload-input" type="file" accept="application/pdf" onchange="handleFileUpload(event)"> 
+                  </div>
+
+
+                <!-- From Uiverse.io by ke1221 -->
+                <div class="checkbox-container"> 
+                    <input class="check1" type="checkbox" id="op1">
+                    <label for="op1">Signed Permission Letter, Offer Letter Submitted</label>
+                </div>
+                <div class="checkbox-container">  
+                    <input class="check1" type="checkbox" id="op2">
+                    <label for="op2">Completion Certificate Submitted</label>
+                </div>
+                <div class="checkbox-container">  
+                    <input class="check1" type="checkbox" id="op3">
+                    <label for="op3">Internship Report Submitted</label>
+                </div>
+                <div class="checkbox-container">  
+                    <input class="check1" type="checkbox" id="op4">
+                    <label for="op4">Student Feedback (About Internship) Submitted</label>
+                </div>
+                <div class="checkbox-container">  
+                    <input class="check1" type="checkbox" id="op5">
+                    <label for="op5">Employer Feedback (About student) Submitted</label>
+                </div>
+            
+                <label for="stipend">Stipend</label>
+                <input required type="text" name="stipend" placeholder="Eg. 20000" id="stipend-input" autocomplete="off">
+            
+                <button type="submit" id="intern-submit-btn">Submit</button>
+            </form>            
+        </div>
+    </div>
+</body>
+</html>

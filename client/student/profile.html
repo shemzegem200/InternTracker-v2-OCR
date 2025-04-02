@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InternTracker</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="../scripts/profile.js" defer></script>
+</head>
+<body>
+    <nav>
+        <span class="logo">Intern<span>Tracker</span></span>
+        <div>
+            <!-- <a class="nav-link nav-link-ltr" href="./studenthome.html">Home</a> -->
+            <a class="nav-link nav-link-ltr" href="./internships.html">Internships</a>
+            <a class="nav-link nav-link-ltr" href="./profile.html">Profile</a>
+            <a class="nav-link nav-link-ltr" href="javascript:localStorage.clear();window.location.href = '../index.html';">Logout</a>
+        </div>
+    </nav>
+    
+    <div class="profile-container">
+        <center>
+            <img class="pfp" src="https://cdn-icons-png.flaticon.com/512/7915/7915522.png">
+            <p style="font-weight: bold; font-size: 1.2rem; color: #292b3a;" id="profile-main-name"></p>
+        </center>
+        <p>Name: <span id="profile-desc-name"></span></p>
+        <p>Username: <span id="profile-desc-username"></span></p>
+        <p>Register Number: <span id="profile-desc-regno"></span></p>
+        <p>Department: <span id="profile-desc-dept"></span></p>
+        <p>Section: <span id="profile-desc-section"></span></p>
+        <p>Batch: <span id="profile-desc-batch"></span></p>
+        <p>Mobile Number: <span id="profile-desc-phone"></span></p>
+    </div>
+</body>
+</html>

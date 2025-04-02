@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InternTracker</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="../scripts/teacher_internships.js" defer></script>
+</head>
+<body>
+    <nav>
+        <span class="logo">Intern<span>Tracker</span></span>
+        <div>
+            <a class="nav-link nav-link-ltr" href="#">Internships</a>
+            <!-- <a class="nav-link nav-link-ltr" href="./profile.html">Profile</a> -->
+            <a class="nav-link nav-link-ltr" href="javascript:localStorage.clear();window.location.href = '../index.html';">Logout</a>
+        </div>
+    </nav>
+    
+
+    <div class="intern-table-1-controls">
+        <h4>Filter</h4>
+        
+        <div class="inner-controls">
+            <select name="section-select-intern" id="section-select-intern" class="custom-select grey">
+                <option selected value="">All sections</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+            </select>
+            <!-- cdc -->
+            <select name="section-select-intern" id="source-select-intern" class="custom-select grey">
+                <option selected value="ALL">ALL</option>
+                <option value="OUTSIDE">OUTSIDE</option>
+                <option value="CDC">CDC</option>
+            </select>
+
+            <!-- industry/research -->
+            <!-- <select name="section-select-intern" id="type-select-intern">
+                <option selected value="ALL">ALL</option>
+                <option value="RESEARCH">RESEARCH</option>
+                <option value="INDUSTRY">INDUSTRY</option>
+            </select> -->
+            
+            <!-- got internship? -->
+            <div class="checkbox-container">  
+                <input class="check1 tooltip" type="checkbox" id="interned-select-intern" data-tooltip="Check this box if the student got an internship">
+            </div>
+            <input type="number" placeholder="Year" id="year-select-intern" class="year-input-select">
+            <!-- super dream -->
+            <div class="checkbox-container">  
+                <input class="check1 tooltip" type="checkbox" id="superdream-select-intern" data-tooltip="Check this box if the offer is 1 LPA or higher">       
+            </div>
+            <!-- india/abroad/all -->
+            <select id="location-select-intern" class="custom-select">
+                <option selected value="ALL">ALL</option>
+                <option value="INDIA">INDIA</option>
+                <option value="ABROAD">ABROAD</option>
+            </select>
+
+        
+            <button onclick="revert()" id="revert-btn" class="search-btn">
+                <svg width="26px" height="26px" stroke="#ffeba7"  viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg"><path fill="#ffeba7" d="M25 38c-5.1 0-9.7-3-11.8-7.6l1.8-.8c1.8 3.9 5.7 6.4 10 6.4 6.1 0 11-4.9 11-11s-4.9-11-11-11c-4.6 0-8.5 2.8-10.1 7.3l-1.9-.7c1.9-5.2 6.6-8.6 12-8.6 7.2 0 13 5.8 13 13s-5.8 13-13 13z"/><path fill="#ffeba7" d="M20 22h-8v-8h2v6h6z"/></svg>
+            </button>
+            <button onclick="updatedSearch()" class="search-btn">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#ffeba7"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    >
+                    <circle cx="11" cy="11" r="6"></circle>
+                    <line x1="15.5" y1="15.5" x2="21" y2="21"></line>
+                    </svg>
+
+            </button>
+        </div>
+    </div>
+    
+    <div class="teacher-table-container">
+        <table class="teacher-table">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Register Number</td>
+                    <th>Name</td>
+                    <th>Mobile No.</th>
+                    <th>Section</th>
+                    <th>Obtained Internship or Not</th>
+                    <th>Title</th>
+                    <th>Period</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Company Name</th>
+                    <th>Placement thru college / outside</th>
+                    <th>india/Abroad</th>
+                    <th>Stipend(In Rs.)</th>
+                </tr>
+            </thead>
+            <tbody id="teacher_interns_table">
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <div class="dim-bg">
+        <div class="model-container">
+            <form>
+                <h4>Internship Details</h4>
+                <input required type="text" placeholder="Company Name">
+
+                <label for="period">Period (in months)</label>
+                <input required type="number" name="period" placeholder="Number of months" min="1" value="1">
+                
+                <label for="start-date">End Date</label>
+                <input required type="date" name='start-date' placeholder="Start Date">
+
+                <label for="end-date">End Date</label>
+                <input required type="date" name="end-date" placeholder="End Date">
+
+                <label for="source">Placement Source</label>
+                <select required name="source" id="">
+                    <option default name="Through College">Through College</option>
+                    <option name="Private Contacts">Private Contacts</option>
+                    <option name="Online Application (Ex. LinkedIn)">Online Application (Ex. LinkedIn)</option>
+                </select>
+                
+                <label for="stipend">Stipend</label>
+                <input required type="text" name="stipend" placeholder="">
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

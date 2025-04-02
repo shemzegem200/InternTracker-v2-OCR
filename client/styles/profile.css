@@ -1,0 +1,34 @@
+.profile-container{
+    margin-top: calc(15px + 55px);
+    padding: 20px;
+    width: 60%;
+    margin-left: 20%;
+    background-color: rgb(215, 212, 238);
+    border-radius: 1.5rem;
+}
+
+.pfp{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: white;
+    padding: 5px;
+}
+center{
+    margin-bottom: 20px;
+}
+
+p{
+    margin-top: 10px;
+    font-weight: bold;
+}
+p span{
+    font-weight: normal;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        width: 90%;
+        margin-left: 5%;
+    }
+}

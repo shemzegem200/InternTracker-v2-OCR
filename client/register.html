@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InternTracker</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="./scripts/register.js" defer></script>
+</head>
+<body>
+    <nav>
+        <span class="logo">Intern<span>Tracker</span></span>
+        <div>
+            <a class="nav-link nav-link-ltr" href="./index.html">Login</a>
+            <a class="nav-link nav-link-ltr" href="#">Register</a>
+            <a class="nav-link nav-link-ltr" href="./about.html">About</a>
+        </div>
+    </nav>
+
+    <section id="login">
+        <h4 class="title_1">Register!</h4>
+        <form id="regform">
+            <!-- username -->
+            <div class="field_1">
+                <svg class="input-icon_1" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                <path d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"></path></svg>
+                <input required autocomplete="off" id="regemail" placeholder="Username" class="input-field_1" name="logemail" type="email">
+            </div>
+            <!-- password -->
+            <div class="field_1">
+                <svg class="input-icon_1" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                <path d="M80 192V144C80 64.47 144.5 0 224 0C303.5 0 368 64.47 368 144V192H384C419.3 192 448 220.7 448 256V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V256C0 220.7 28.65 192 64 192H80zM144 192H304V144C304 99.82 268.2 64 224 64C179.8 64 144 99.82 144 144V192z"></path></svg>
+                <input required autocomplete="off" id="regpass" placeholder="Password" class="input-field_1" name="logpass" type="password">
+            </div>
+            <!-- register no. -->
+            <div class="field_1">
+                <svg width="35" class="input-icon_1" height="35" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L1 7l11 5 9-4v11h2V7l-11-5zm0 12l-6-3 6-3 6 3-6 3zm0 4l-6-3 6-3 6 3-6 3z"/>
+                </svg>
+                <input required autocomplete="off" id="regreg" placeholder="Register no." class="input-field_1" name="logemail" type="text">
+            </div>
+            <!-- student/teacher -->
+            <!-- <div class="field_2">
+                <input type="radio" name="option" id="student-input-login" class="check">
+                <label for="student-input-login">student</label>    
+                <input type="radio" name="option" id="teacher-input-login" class="check">
+                <label for="teacher-input-login">teacher</label>
+            </div> -->
+
+            <!-- name -->
+            <div class="field_1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="input-icon_1" fill="#ffeba7" width="40" height="40" viewBox="0 0 34 34" stroke="#ffeba7" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="15" cy="10" r="5"/>
+                    <path d="M7 24c0-5 4-7 8-7s8 2 8 7"/>
+                </svg>   
+                <input required autocomplete="off" id="regname" placeholder="Name" class="input-field_1" name="logemail" type="text">
+            </div>
+
+            <!-- mobile no. -->
+            <div class="field_1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffeba7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.06 19.53 19.53 0 0 1-6-6 19.86 19.86 0 0 1-3.06-8.67A2 2 0 0 1 3.08 2h3a2 2 0 0 1 2 1.72 13 13 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11l-1.2 1.2a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.11-.45 13 13 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>                                
+                <input required autocomplete="off" id="regpn" placeholder="Mobile no." class="input-field_1" name="logemail" type="tel">
+            </div>
+
+            <!-- Select Dept, Section, Batch -->
+            <div style="display: flex; width: 100%; gap: 10px; justify-content: center;">
+                <!-- Department -->
+                <select required id="regdept" class="field_1" style="color: grey; border: none;">
+                    <option value="" disabled selected>Select Dept.</option>
+                    <option>CSE</option>
+                    <option>IT</option>
+                    <option>ECE</option>
+                    <option>EEE</option>
+                    <option>MECH</option>
+                    <option>CHEMICAL</option>
+                    <option>CIVIL</option>
+                    <option>BIOMEDICAL</option>
+                </select>
+                <!-- Section A, B, C -->
+                <select required id="regsection" class="field_1" style="color: grey; border: none;">
+                    <option value="" disabled selected>Select Section</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                </select>
+                <!-- Batch -->
+                <select required id="regbatch" class="field_1" style="color: grey; border: none;">
+                    <option value="" disabled selected>Batch</option>
+                    <!-- Dynamically add current batch years -->
+                </select>
+            </div>
+
+
+            <button id="regsubmitbtn" class="btn_1" type="submit">Register</button>
+        </form>
+    </section>
+</body>
+</html>
